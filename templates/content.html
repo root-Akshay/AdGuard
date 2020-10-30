@@ -1,0 +1,178 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div class="relative flex items-center justify-between h-16">
+            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                <div class="flex-shrink-0">
+
+                    <img class="hidden lg:block h-12 px-4 pt-2 w-auto"
+                        src="{{ url_for('static',filename='/assets/black-hole.png') }}" alt="Workflow logo">
+                </div>
+                <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                    <div class="flex-shrink-0">
+                        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Ad-Gu@rd</h1>
+                    </div>
+                </div>
+                <div class="ml-3 relative pt-2">
+                    <div>
+                        <form method="post" action=" ">
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+                                type="
+                                submit" name="logout" value="logout">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</nav>
+
+<section class="text-gray-700 body-font">
+    <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Ad-Gu@rd Statistics</h1>
+            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Ad-Gu@rd is a Linux network-level advertisement and
+                Internet tracker blocking application which acts as a DNS sinkhole, intended use for private networks
+            </p>
+        </div>
+        <div class="flex flex-wrap -m-4 text-center">
+            <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+                <div
+                    class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                        <path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                        </path>
+                    </svg>
+                    <h2 class="title-font font-medium text-3xl text-gray-900">{{ allQueries }}</h2>
+                    <p class="leading-relaxed">Total Queries Made</p>
+                </div>
+            </div>
+            <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+                <div
+                    class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <h2 class="title-font font-medium text-3xl text-gray-900">{{ blockedQueries }}</h2>
+                    <p class="leading-relaxed">Blocked Queries</p>
+                </div>
+            </div>
+            <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+                <div
+                    class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                        <path
+                            d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                        </path>
+                    </svg>
+                    <h2 class="title-font font-medium text-3xl text-gray-900">{{ locally[0] }}</h2>
+                    <p class="leading-relaxed">Query Resolved Locally</p>
+                </div>
+            </div>
+            <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+                <div
+                    class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                        <path
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                        </path>
+                    </svg>
+                    <h2 class="title-font font-medium text-3xl text-gray-900">{{ percent }}%</h2>
+                    <p class="leading-relaxed">Percent Of Ads Blocked</p>
+                </div>
+            </div>
+
+            <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+                <div
+                    class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                        <path d="M5 15l7-7 7 7">
+                        </path>
+                    </svg>
+                    <h2 class="title-font font-medium text-3xl text-gray-900">{{ querytype[1][1] }}</h2>
+                    <p class="leading-relaxed">IPv4 Queries</p>
+                </div>
+            </div>
+            <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+                <div
+                    class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                        <path d="M5 11l7-7 7 7M5 19l7-7 7 7"></path>
+                    </svg>
+                    <h2 class="title-font font-medium text-3xl text-gray-900">{{ querytype[0][1] }}</h2>
+                    <p class="leading-relaxed">IPv6 Queries</p>
+                </div>
+            </div>
+            <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+                <div
+                    class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                        <path
+                            d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z">
+                        </path>
+                    </svg>
+                    <h2 class="title-font font-medium text-3xl text-gray-900">{{ forwarded[0][0] }}</h2>
+                    <p class="leading-relaxed">Query Resolved by {{ forwarded[0][1] }}</p>
+                </div>
+            </div>
+
+            <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
+                <div
+                    class="border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-110">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                        <path
+                            d="M11.933 12.8a1 1 0 000-1.6L6.6 7.2A1 1 0 005 8v8a1 1 0 001.6.8l5.333-4zM19.933 12.8a1 1 0 000-1.6l-5.333-4A1 1 0 0013 8v8a1 1 0 001.6.8l5.333-4z">
+                        </path>
+                    </svg>
+                    <h2 class="title-font font-medium text-3xl text-gray-900">{{ forwarded[1][0] }}</h2>
+                    <p class="leading-relaxed">Query Resolved by {{ forwarded[1][1] }} </p>
+                </div>
+            </div>
+            <div class="p-5 flex mb-4 w-full">
+                <div
+                    class="w-full border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-x-100">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="text-indigo-500 w-full h-12 mb-3 inline-block " viewBox="0 0 24 24">
+                        <path
+                            d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01">
+                        </path>
+                    </svg>
+                    <h2 class="title-font font-medium text-3xl text-gray-900">Blacklisted Domains</h2>
+                    <br><br>
+                    <p class="leading-relaxed">
+                    <table class="table-fixed">
+                        <thead>
+                            <tr>
+                                <th class="w-1/4 px-4 py-2">Date</th>
+                                <th class="w-1/4 px-4 py-2">Count</th>
+                                <th class="w-screen px-4 py-2">Blocked Domain</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in blacklists1 %}
+                            <tr>
+                                <td class="border px-4 py-2">{{ i[0] }}</td>
+                                <td class="border px-4 py-2">{{ i[1] }} Requests</td>
+                                <td class="border px-4 py-2">{{ i[2] }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

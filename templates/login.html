@@ -1,0 +1,64 @@
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="icon" type="text/css" href="{{ url_for('static',filename='/assets/black-hole.png') }}">
+  <nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+          <div class="flex-shrink-0">
+
+            <img class="hidden lg:block h-12 px-4 pt-2 w-auto"
+              src="{{ url_for('static',filename='/assets/black-hole.png') }}" alt="Workflow logo">
+          </div>
+          <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex-shrink-0">
+              <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Ad-Gu@rd</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</head>
+
+<body class=" bg-indigo-100 ">
+  <div class="container mx-auto flex mt-24  justify-center items-center ">
+    <form class="bg-white shadow-2xl rounded px-8 pt-6 pb-8 " method="POST">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
+          Username
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="username" name="username" type="text" placeholder="Username" value="{{ request.form.username }}">
+      </div>
+      <div class="mb-6">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+          Password
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+          id="password" name="password" type="password" placeholder="Password" value="{{ request.form.password }}">
+        <p class="text-red-500 text-xs italic">
+          {% if error %}
+          Error: {{ error }}
+          {% endif %}</p>
+      </div>
+      <div class="flex items-center justify-between">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          type="submit" value="Login">
+          Sign In
+        </button>
+      </div>
+    </form>
+  </div>
+  <p class="text-center text-gray-600 text-xs">
+    &copy;2020 Ad-Gu@rd. All rights reserved.
+</body>
+
+
+</html>
