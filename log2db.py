@@ -26,8 +26,8 @@ class logs:
             c.execute(
                 "INSERT INTO blacklists VALUES (?,?)", (a[0] + a[1], a[5]),
             )
-        except Exception as e:
-            print(e)
+        except:
+            pass
 
     def convert(self):
         c = self.c
