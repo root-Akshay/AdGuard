@@ -1,11 +1,16 @@
 #!/bin/bash
-sudo cat >> /etc/network/interfaces << EOF
+sudo cat >> /etc/dhcpcd.conf << EOF
 
-auto enp0s3
-iface enp0s3 inet static
-    address 192.168.1.28
-    gateway 192.168.1.1
-    netmask 255.255.255.0
-    network 192.168.1.0
-    broadcast 192.168.1.255
+interface eth0
+static ip_address=192.168.0.201/24
+static routers=192.168.0.1
+static domain_name_servers=192.168.0.1
+
+interface wlan0
+static ip_address=192.168.0.200/24
+static routers=192.168.0.1
+static domain_name_servers=1.1.1.1 1.0.0.1
 EOF
+
+echo "Done. Rebooting..."
+sudo reboot
