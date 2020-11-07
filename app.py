@@ -21,8 +21,8 @@ def login():
     error = None
     if request.method == "POST":
         if (
-            request.form["username"] != "Adgu@rd"
-            or request.form["password"] != "Adgu@rd123"
+            request.form["username"] != "Adguard"
+            or request.form["password"] != "Adguard123"
         ):
             error = "Invalid Credentials. Please try again."
         else:

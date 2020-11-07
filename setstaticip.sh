@@ -13,4 +13,5 @@ static domain_name_servers=1.1.1.1 1.0.0.1
 EOF
 
 echo "Done. Rebooting..."
+sleep 5
 sudo reboot

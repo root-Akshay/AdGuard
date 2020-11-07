@@ -18,13 +18,13 @@ conf-file=home/pi/AdGu@rd/Blacklists/domains.txt
 addn-hosts=home/pi/AdGu@rd/Blacklists/hostnames.txt
 EOT
 
-sudo tee -a /etc/systemd/system/adgu@rd.service  > /dev/null <<EOT
+sudo tee -a /etc/systemd/system/adguard.service  > /dev/null <<EOT
 [Unit]
-Description=AdGu@rd
+Description=AdGuard
 
 [Service]
 Type=simple
-WorkingDirectory=/home/pi/AdGu@rd
+WorkingDirectory=/home/pi/AdGuard
 Environment=FLASK_CONFIG=production
 Environment=FLASK_APP=app.py
 ExecStart=flask run --host 0.0.0.0
@@ -36,7 +36,7 @@ EOT
 echo "Downloading Blacklists"
 
 sudo chmod +x updateblacklist.sh
-sudo chmod +x adgu@rd.sh
+sudo chmod +x adguard.sh
 echo "`./updateblacklist.sh`"
 
 echo "Restarting Dnsmasq"
