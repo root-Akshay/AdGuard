@@ -14,8 +14,8 @@ dns-forward-max=150
 no-poll
 log-queries
 log-facility=/var/log/dnsmasq.log
-conf-file=home/pi/AdGu@rd/Blacklists/domains.txt
-addn-hosts=home/pi/AdGu@rd/Blacklists/hostnames.txt
+conf-file=home/pi/AdGuard/Blacklists/domains.txt
+addn-hosts=home/pi/AdGuard/Blacklists/hostnames.txt
 EOT
 
 sudo tee -a /etc/systemd/system/adguard.service  > /dev/null <<EOT
