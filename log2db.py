@@ -64,7 +64,7 @@ class logs:
         c.execute('select count(Type) from logs where Type="reply"')
         locally = c.fetchone()
 
-        c.execute("select Month,count(Name),Name from blacklists group by Name order by count(Name) desc")
+        c.execute("select Month,count(Name),Name from blacklists group by Name order by count(Name) desc limit 50")
         blacklists1 = c.fetchall()
         try:
             if forwarded[1][0] == None:
