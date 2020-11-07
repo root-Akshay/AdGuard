@@ -18,6 +18,21 @@ conf-file=home/pi/AdGu@rd/Blacklists/domains.txt
 addn-hosts=home/pi/AdGu@rd/Blacklists/hostnames.txt
 EOT
 
+sudo tee -a /etc/systemd/system/adgu@rd.service  > /dev/null <<EOT
+[Unit]
+Description=AdGu@rd
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/AdGu@rd
+Environment=FLASK_CONFIG=production
+Environment=FLASK_APP=app.py
+ExecStart=flask run --host 0.0.0.0
+TimeoutSec=infinity
+[Install]
+WantedBy=multi-user.target
+EOT
+
 echo "Downloading Blacklists"
 
 sudo chmod +x updateblacklist.sh
