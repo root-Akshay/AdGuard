@@ -7,7 +7,6 @@ First, clone the repository on to your Raspberry Pi
 
 After the cloning completes,    
 Open the AdGuard Directory:  
-
 ```bash cd AdGuard ```  
 
 Convert the install file to an executable file:\
