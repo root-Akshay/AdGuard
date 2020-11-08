@@ -15,13 +15,13 @@ Convert the install file to an executable file:\
 Run the file, it will install Adguard and other Required Dependencies.  
 ```bash ./install.sh ```  
 
-system will reboot after installation completes  
+System will reboot after installation completes  
 
 # Running AdGuard  
-To start AdGuard:\  
+To start AdGuard: \  
 ```bash sudo systemctl start adguard ```  
 
-To stop AdGuard:\ 
+To stop AdGuard: \ 
 ```bash sudo systemctl stop adguard ```  
 
 # Web Interface  
@@ -35,6 +35,17 @@ Enter the Id and Password::
 Id: Adguard
 Pass::Adguard123
 ```
+# Features
+* Easy To Install \
+* Lightweight \
+* Web Panel \
+* Responsive \
+* Free \
+
 
 # Screenshots
 ![](Screenshots/Login.png) ![](Screenshots/Stats2.png) ![](Screenshots/Stats3.png)
+
+# Credits
+Hero Icons (https://heroicons.com/) \
+
