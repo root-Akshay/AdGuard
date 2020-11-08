@@ -6,7 +6,8 @@ First, clone the repository on to your Raspberry Pi
 ```bash git clone https://github.com/root-Akshay/AdGuard.git ```  
 
 After the cloning completes,    
-Open the AdGuard Directory:    
+Open the AdGuard Directory:  
+
 ```bash cd AdGuard ```  
 
 Convert the install file to an executable file:\
@@ -18,10 +19,10 @@ Run the file, it will install Adguard and other Required Dependencies.
 System will reboot after installation completes  
 
 # Running AdGuard  
-To start AdGuard: \  
+To start AdGuard:  
 ```bash sudo systemctl start adguard ```  
 
-To stop AdGuard: \ 
+To stop AdGuard:  
 ```bash sudo systemctl stop adguard ```  
 
 # Web Interface  
@@ -36,16 +37,16 @@ Id: Adguard
 Pass::Adguard123
 ```
 # Features
-* Easy To Install \
-* Lightweight \
-* Web Panel \
-* Responsive \
-* Free \
+* Easy To Install 
+* Lightweight 
+* Web Panel 
+* Responsive 
+* Free 
 
 
 # Screenshots
 ![](Screenshots/Login.png) ![](Screenshots/Stats2.png) ![](Screenshots/Stats3.png)
 
 # Credits
-Hero Icons (https://heroicons.com/) \
+Hero Icons (https://heroicons.com/) 
 
