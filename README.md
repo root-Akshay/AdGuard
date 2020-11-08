@@ -1,5 +1,5 @@
 # AdGuard
-AdGuard is dnsmasq based adblocker with a Web UI to monitor stats. Get rid of annoying ads protect your devices from pesky malware. Make your web surfing fast, secure and ad-free.
+AdGuard is dnsmasq based adblocker with a Web UI to monitor stats. Get rid of annoying ads protect your devices from pesky malware. Make your web surfing fast, secure and ad-free.Intended use with Raspberry PI.
 
 # Installation
 First, clone the repository on to your Raspberry Pi  
@@ -48,4 +48,5 @@ Pass::Adguard123
 
 # Credits
 [Hero Icons](https://heroicons.com/) 
+[Steven Black](https://github.com/StevenBlack/hosts)
 
