@@ -71,8 +71,9 @@ class logs:
                 pass
         except:
             forwarded.append((0, "Secondary DNS"))
-
-        return total, blocked, query_type1, forwarded, locally, blacklists1
+        c.execute("select count(Name),Name from logs where IP!='0.0.0.0' group by Name order by count(Name) desc limit 10")
+        top10 = c.fetchall()
+        return total, blocked, query_type1, forwarded, locally, blacklists1,top10    
 
     def close(self):
         self.conn.close()
