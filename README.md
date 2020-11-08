@@ -44,7 +44,7 @@ Pass::Adguard123
 
 
 # Screenshots
-![](Screenshots/Login.png) ![](Screenshots/Stats2.png) ![](Screenshots/Stats3.png)
+![](Screenshots/s1.png) ![](Screenshots/s4.png) ![](Screenshots/s2.png) ![](Screenshots/s3.png)
 
 # Credits
 * [Hero Icons](https://heroicons.com/) 
