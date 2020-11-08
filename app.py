@@ -10,10 +10,10 @@ app.config["DEBUG"] = False
 
 def refresh():
     l = logs()
-    total, blocked, qt1, forwrd, locally, blacklists1 = l.convert()
+    total, blocked, qt1, forwrd, locally, blacklists1,top10 = l.convert()
     percent = math.ceil((int(blocked[0]) / int(total[0])) * 100)
     # l.close()
-    return total, blocked, qt1, forwrd, locally, blacklists1, percent
+    return total, blocked, qt1, forwrd, locally, blacklists1, percent,top10
 
 @app.route("/")
 @app.route("/login", methods=["GET", "POST"])
@@ -40,7 +40,7 @@ def hello():
     else:
         if z != 1:
             return redirect(url_for("login"))
-        total, blocked, qt1, forwrd, locally, blacklists1, percent = refresh()
+        total, blocked, qt1, forwrd, locally, blacklists1, percent,top10 = refresh()
 
         return render_template(
             "content.html",
@@ -52,6 +52,7 @@ def hello():
             forwarded=forwrd,
             blacklists1=blacklists1,
             locally=locally,
+            top10=top10,
         )
 
 
