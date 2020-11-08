@@ -143,6 +143,40 @@
                     class="w-full border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-x-100">
                     <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                         stroke-width="2" class="text-indigo-500 w-full h-12 mb-3 inline-block " viewBox="0 0 24 24">
+                        <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path
+                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z">
+                        </path>
+                    </svg>
+                    <h2 class="title-font font-medium text-3xl text-gray-900">Most Visited Domains</h2>
+                    <h5 class="title-font font-small text-sm text-gray-500">Top 10</h5>
+                    <br>
+                    <p class="leading-relaxed">
+                    <table class="table-auto overflow-auto">
+                        <thead>
+                            <tr>
+                                <th class="w-2/5 px-2 py-2">Count</th>
+                                <th class="w-screen px-2 py-2">Domain</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in top10 %}
+                            <tr>
+                                <td class="border px-2 py-2">{{ i[0] }} Requests</td>
+                                <td class="border px-2 py-2">{{ i[1] }} </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    </p>
+
+                </div>
+            </div>
+            <div class="p-5 flex mb-4 w-full">
+                <div
+                    class="w-full border-2 border-gray-600 px-4 py-6 rounded-lg transform transition duration-500 hover:scale-x-100">
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                        stroke-width="2" class="text-indigo-500 w-full h-12 mb-3 inline-block " viewBox="0 0 24 24">
                         <path
                             d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01">
                         </path>
