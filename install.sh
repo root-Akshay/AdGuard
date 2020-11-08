@@ -18,6 +18,7 @@ conf-file=home/pi/AdGuard/Blacklists/domains.txt
 addn-hosts=home/pi/AdGuard/Blacklists/hostnames.txt
 EOT
 
+sudo rm /etc/systemd/system/adguard.service
 sudo tee -a /etc/systemd/system/adguard.service  > /dev/null <<EOT
 [Unit]
 Description=AdGuard
@@ -33,21 +34,21 @@ TimeoutSec=infinity
 WantedBy=multi-user.target
 EOT
 
-echo "Downloading Blacklists"
-
-sudo chmod +x updateblacklist.sh
-sudo chmod +x adguard.sh
-echo "`./updateblacklist.sh`"
-
-echo "Restarting Dnsmasq"
-sudo systemctl daemon-reload
-sudo systemctl restart dnsmasq
 
 echo "Installing Python3"
 sudo apt-get install python3
 
 echo "Installing Flask"
 pip3 install Flask
+
+echo "Downloading Blacklists"
+sudo chmod +x updateblacklist.sh
+echo "`./updateblacklist.sh`"
+
+echo "Restarting Dnsmasq"
+sudo systemctl daemon-reload
+sudo systemctl restart dnsmasq
+
 
 sudo chmod +x setstaticip.sh
 echo "`./setstaticip.sh`"
