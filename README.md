@@ -3,26 +3,26 @@ AdGuard is dnsmasq based adblocker with a Web UI to monitor stats. Get rid of an
 
 # Installation
 First, clone the repository on to your Raspberry Pi  
-```bash git clone https://github.com/root-Akshay/AdGuard.git ```  
+``` git clone https://github.com/root-Akshay/AdGuard.git ```  
 
 After the cloning completes,    
 Open the AdGuard Directory:  
-```bash cd AdGuard ```  
+``` cd AdGuard ```  
 
 Convert the install file to an executable file:\
-```bash sudo chmod +x install.sh ```  
+``` sudo chmod +x install.sh ```  
 
 Run the file, it will install Adguard and other Required Dependencies.  
-```bash ./install.sh ```  
+``` ./install.sh ```  
 
 System will reboot after installation completes  
 
 # Running AdGuard  
 To start AdGuard:  
-```bash sudo systemctl start adguard ```  
+``` sudo systemctl start adguard ```  
 
 To stop AdGuard:  
-```bash sudo systemctl stop adguard ```  
+``` sudo systemctl stop adguard ```  
 
 # Web Interface  
 The install.sh script gives your RPI a static IP 192.168.0.200.  
