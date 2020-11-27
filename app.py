@@ -16,6 +16,9 @@ def refresh():
     return total, blocked, qt1, forwrd, locally, blacklists1, percent,top10
 
 @app.route("/")
+def temp():
+    return redirect(url_for("login"))
+    
 @app.route("/login", methods=["GET", "POST"])
 def login():
     error = None
