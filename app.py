@@ -22,7 +22,7 @@ def login():
     if request.method == "POST":
         if (
             request.form["username"] != "Adguard"
-            and request.form["password"] != "Adguard123"
+            or request.form["password"] != "Adguard123"
         ):
             error = "Invalid Credentials. Please try again."
         else:
