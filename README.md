@@ -5,6 +5,9 @@ AdGuard is dnsmasq based adblocker with a Web UI to monitor stats. Get rid of an
 First, clone the repository on to your Raspberry Pi  
 ``` git clone https://github.com/root-Akshay/AdGuard.git ```  
 
+If, git is not installed,       
+```sudo apt install git```    
+
 After the cloning completes,    
 Open the AdGuard Directory:  
 ``` cd AdGuard ```  
