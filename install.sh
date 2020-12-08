@@ -40,7 +40,7 @@ sudo apt-get install python3
 sudo apt-get install python3-pip
 
 echo "Installing Flask"
-pip3 install Flask
+sudo pip3 install Flask
 
 echo "Downloading Blacklists"
 sudo chmod +x updateblacklist.sh
