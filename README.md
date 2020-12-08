@@ -49,7 +49,7 @@ Pass::Adguard123
 # Screenshots
 ![](Screenshots/s1.png) ![](Screenshots/s4.png) ![](Screenshots/s2.png) ![](Screenshots/s3.png)
 
-# Credits
+# Resorces Used   
 * [Hero Icons](https://heroicons.com/) 
 * [Steven Black](https://github.com/StevenBlack/hosts)
 
