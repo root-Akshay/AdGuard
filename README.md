@@ -30,7 +30,7 @@ To stop AdGuard:
 # Web Interface  
 The install.sh script gives your RPI a static IP 192.168.0.200.  
 
-To access the web Panel. Open chrome and type RPI in search bar.  
+To access the web Panel. Open chrome and type address in search bar.  
 ``` 192.168.0.200:5000/login ```  
 
 Enter the Id and Password::  
